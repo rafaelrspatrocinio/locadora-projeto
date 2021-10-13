@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Locadora</title>
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <STYLE>A {text-decoration: none;} </STYLE>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="/"><span class="navbar-brand mb-0 h1" style="font-weight: bold;">Locadora</span></a>
+            <div>
+                <a href="/clientes"  class="btn btn-secondary" role="button">Cliente</a>
+                <a href="/pedidos"  class="btn btn-secondary" role="button">Pedidos</a>
+                <a href="/funcionarios"  class="btn btn-secondary" role="button">Funcionarios</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section>
+    <div class="container" style="width: 60%; padding-bottom: 30px;">
+    <br>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="font-weight: bold; padding-left: 0px;">
+                <li class="breadcrumb-item active" aria-current="page"><h1>Produto</h1></li>
+            </ol>
+        </nav>
+
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" >
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each="produto : ${produtos}">
+                    <th th:text="${produto.id}" ></th>
+                    <td th:text="${produto.nome} "></td>
+                    <td th:text="${produto.preco} "></td>
+                    <td th:text="${produto.descricao} "></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <a href="/novoproduto"  class="btn btn-secondary" role="button">Cadastrar Novo Produto</a>
+
+
+    </div>
+
+</section>
+
+</body>

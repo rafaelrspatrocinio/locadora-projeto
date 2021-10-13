@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Locadora</title>
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <STYLE>A {text-decoration: none;} </STYLE>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid" style="padding-bottom: 12px;" >
+            <a href="/"><span class="navbar-brand mb-0 h1" style="font-weight: bold;">Locadora</span></a>
+        </div>
+    </nav>
+</header>
+
+<section>
+
+    <div class="container" style="width: 60%; padding-bottom: 30px;">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style=" font-weight: bold; background-color: white; padding-top : 30px;">
+                <li class="breadcrumb-item"><a href="/pedidos"><span class="texto">Pedidos</span></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cadastro de Pedidos</li>
+            </ol>
+        </nav>
+
+        <div>
+            <style type="text/css">
+	       .texto{
+		    color: black;
+	           }
+
+	        .texto3{
+	       	color: red;
+	          }
+             </style>
+            <form method="post">
+                <div class="panel-default well" th:each="produto : ${produtos}">
+                    <div class="panel-heading">
+                        <h1 th:text="${produto.nome}"></h1>
+                    </div>
+
+                    <h3 class="panel-body" th:text="${produto.nome}">Descrição</h3>
+
+                    <div class="row panel-footer">
+                        <div class="col-md-2" th:inline="text">Preço: [[${produto.preco}]]</div>
+                        <a class="col-md-1" th:href="@{'/pedido/addProduto/{id}' (id=${produto.id})}">
+                            <button type="button" class="btn btn-primary">Adicionar</button>
+                        </a>
+                    </div>
+
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

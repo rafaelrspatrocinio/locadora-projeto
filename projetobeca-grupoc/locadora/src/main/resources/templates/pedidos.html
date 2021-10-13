@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Locadora</title>
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <STYLE>A {text-decoration: none;} </STYLE>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="/"><span class="navbar-brand mb-0 h1" style="font-weight: bold;">Locadora</span></a>
+            <a href="/novopedido" class="btn btn-secondary" role="button">Novo Pedido</a>
+        </div>
+    </nav>
+</header>
+
+<section>
+    <div class="container" style="width: 60%; padding-bottom: 30px;">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="font-weight: bold; background-color: white; padding-top: 30px;">
+                <li class="breadcrumb-item active" aria-current="page"><h1>Pedidos</h1></li>
+            </ol>
+        </nav>
+
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" >
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Forma de Pagamento</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each="pedido : ${pedidos}">
+                    <th th:text="${pedido.id}"></th>
+                    <td th:text="${pedido.data}"></td>
+                    <td th:text="${pedido.formaPagamento}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+</body>
+</html>

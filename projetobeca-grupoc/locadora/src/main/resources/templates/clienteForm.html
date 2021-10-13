@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Locadora</title>
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <STYLE>A {text-decoration: none;} </STYLE>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid" style="padding-bottom: 12px;">
+           <a href="/"> <span class="navbar-brand mb-0 h1" style="font-weight: bold;">Locadora</span></a>
+        </div>
+    </nav>
+</header>
+
+<section>
+    <div class="container" style="width: 60%; padding-bottom: 30px;">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="font-weight: bold; background-color: white; padding-top: 30px;">
+                <li class="breadcrumb-item"><a href="/clientes"><span class="texto">Clientes</span></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cadastro de Clientes</li>
+            </ol>
+        </nav>
+
+        <div>
+
+            <style type="text/css">
+	       .texto{
+		    color: black;
+	           }
+
+	        .texto2{
+		    color: white;
+	          }
+
+	        .texto3{
+	       	color: red;
+	          }
+             </style>
+            <form method="post">
+                <div class="form-group">
+                    <span class="texto">Nome:</span> <input required type="text" class="form-control" name="nome" placeholder="Digite o seu nome *">
+                </div><br>
+                <div class="form-group">
+                    <span class="texto">Telefone:</span> <input required max="10" type="text" class="form-control" name="telefone" placeholder="Digite seu telefone aqui *">
+                </div><br>
+                <div class="form-group">
+                    <span class="texto">CPF:</span> <input required type="text" min="11" max="11" class="form-control" name="cpf" placeholder="Digite seu CPF aqui *">
+                </div><br>
+                <div class="form-group">
+                    <span class="texto">E-mail:</span> <input type="text" class="form-control" name="email" placeholder="Digite seu e-mail aqui *">
+                </div><br>
+                <div class="form-group">
+                    <span class="texto">Endereço:</span>  <input type="text" class="form-control" name="endereco" placeholder="Digite seu endereço aqui *">
+                </div><br>
+                <div class="form-group">
+                    <span class="texto">Login:</span> <input type="text" class="form-control" name="login" placeholder="Digite seu login aqui *">
+                </div><br>
+                <div class="form-group">
+                    <span class="texto">Senha:</span> <input type="password" class="form-control" name="senha" placeholder="Digite sua senha aqui *">
+                </div>
+
+                <small class="form-text text-muted"><span class="texto">(*) Campos obrigatórios!</span>></small><br>
+                <button type="submit" class="btn btn-secondary" style="margin-top: 10px;">Cadastrar</button>
+                <a href="/portalcliente" class="btn btn-danger" role="button" style="margin-top: 10px;">Cancelar</a>
+
+            </form>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+</body>

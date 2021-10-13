@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Locadora</title>
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <STYLE>A {text-decoration: none;} </STYLE>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid" style="padding-bottom: 12px;">
+            <a href="/"><span class="navbar-brand mb-0 h1" style="font-weight: bold;">Locadora</span></a>
+        </div>
+    </nav>
+</header>
+
+<section>
+    <div class="container" style="width: 60%; padding-bottom: 30px;">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="font-weight: bold; background-color: white; padding-top: 30px;">
+                <li class="breadcrumb-item"><a href="/pedidos"><span class="texto">Pedidos</span></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cadastro de Pedidos</li>
+            </ol>
+        </nav>
+
+        <div>
+            <form method="post">
+                <style type="text/css">
+	                .texto{
+		            color: black;
+	                }
+	                 .texto2{
+	            	color: grey;
+                	}
+            	    .texto3{
+	        	    color: red;
+	                }
+
+                </style>
+
+
+              <div class="form-group">
+                  <label>Cliente:</label>
+                  <span th:text="${pedido.clientes.size()}"></span>
+              </div>
+
+                <div class="form-group">
+                    <label>Produto:</label>
+                    <span th:text="${pedido.produtos.size()}"></span>
+                </div>
+<br>
+                <div class="form-group">
+                    <span class="texto">Tempo de Locação</span> (em dias): <input type="number" class="form-control" name="tempoDeLocacao" min="0" placeholder="Quantos dias deseja ficar com o produto?">
+                </div>
+
+                <span>Forma de Pagamento:</span>
+                <div class="form-group">
+                    <select class="form-select" id="percentage" name="formaPagamento">
+                        <option value="CARTAO_CREDITO">Cartão de Crédito</option>
+                        <option value="CARTAO_DEBITO">Cartão de Débito</option>
+                        <option value="DINHEIRO">Dinheiro</option>
+                        <option value="CHEQUE">Cheque</option>
+                    </select>
+                </div>
+
+                <small class="form-text text-muted"><span class="texto3">(*) Campos obrigatórios!</span></small><br>
+                <a href="/adicionarcliente" class="btn btn-danger" role="button" style="margin-top: 10px;">Adicionar Cliente ao pedido</a>
+                <a href="/adicionarproduto" class="btn btn-danger" role="button" style="margin-top: 10px;">Adicionar Produto ao pedido</a>
+                <button type="submit" class="btn btn-secondary" style="margin-top: 10px;">Fechar Pedido</button>
+                <a href="/produtos" class="btn btn-danger" role="button" style="margin-top: 10px;">Cancelar</a>
+
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
